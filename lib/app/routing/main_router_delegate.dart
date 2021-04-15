@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigator2/app/dependency_injection/dependency_factory.dart';
-import 'package:navigator2/app/routing/main_navigation.dart';
+import 'package:navigator2/app/routing/main_navigation_stack.dart';
 import 'package:navigator2/features/goodbye/goodbye_screen.dart';
 import 'package:navigator2/features/hello/hello_screen.dart';
 import 'package:navigator2/features/home/bloc/home_bloc.dart';

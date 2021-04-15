@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigator2/app/routing/main_navigation.dart';
+import 'package:navigator2/app/routing/main_navigation_stack.dart';
+import 'package:navigator2/app/routing/routes.dart';
 
 class MainRouterInformationParser
     extends RouteInformationParser<MainNavigationStack> {
@@ -18,16 +20,16 @@ class MainRouterInformationParser
       for (var i = 0; i < uri.pathSegments.length; i++) {
         final segment = uri.pathSegments[i];
         switch (segment) {
-          case 'splash':
+          case Routes.SPLASH:
             items = [MainNavigation.splash()];
             break;
-          case 'home':
+          case Routes.HOME:
             items.add(MainNavigation.home());
             break;
-          case 'hello':
+          case Routes.HELLO:
             items.add(MainNavigation.hello());
             break;
-          case 'goodbye':
+          case Routes.GOODBYE:
             items.add(MainNavigation.goodbye());
             break;
           default:
@@ -48,10 +50,10 @@ class MainRouterInformationParser
         return previousValue +
             element.when(
               notFound: () => '',
-              splash: () => '/splash',
-              hello: () => '/hello',
-              goodbye: () => '/goodbye',
-              home: () => '/home',
+              splash: () => '/${Routes.SPLASH}',
+              hello: () => '/${Routes.HELLO}',
+              goodbye: () => '/${Routes.GOODBYE}',
+              home: () => '/${Routes.HOME}',
             );
       },
     );
