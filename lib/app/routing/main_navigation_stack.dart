@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:navigator2/app/routing/main_navigation.dart';
+import 'package:navigator2/app/routing/main_router_delegate.dart';
 
 class MainNavigationStack with ChangeNotifier {
   List<MainNavigation> _items;
@@ -26,5 +27,14 @@ class MainNavigationStack with ChangeNotifier {
     } catch (e) {
       return null;
     }
+  }
+
+  static MainNavigationStack? of(BuildContext context) {
+    final router = Router.maybeOf(context);
+    if (router != null && router.routerDelegate is MainRouterDelegate) {
+      final delegate = router.routerDelegate as MainRouterDelegate;
+      return delegate.stack;
+    }
+    return null;
   }
 }

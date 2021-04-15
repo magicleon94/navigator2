@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigator2/app/routing/main_navigation.dart';
-import 'package:navigator2/app/routing/main_router_delegate.dart';
+import 'package:navigator2/app/routing/main_navigation_stack.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -13,11 +13,7 @@ class SplashScreen extends StatelessWidget {
         child: ElevatedButton(
           child: Text('Go to home'),
           onPressed: () {
-            final router = Router.maybeOf(context);
-            if (router != null) {
-              final delegate = router.routerDelegate as MainRouterDelegate;
-              delegate.stack.items = [MainNavigation.home()];
-            }
+            MainNavigationStack.of(context)?.items = [MainNavigation.home()];
           },
         ),
       ),
