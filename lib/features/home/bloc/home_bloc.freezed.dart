@@ -316,6 +316,8 @@ class __$LoadingCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
   _Loading get _value => super._value as _Loading;
 }
 
+@Implements(LoadingState)
+
 /// @nodoc
 class _$_Loading implements _Loading {
   const _$_Loading();
@@ -382,7 +384,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements HomeState {
+abstract class _Loading implements HomeState, LoadingState {
   const factory _Loading() = _$_Loading;
 }
 

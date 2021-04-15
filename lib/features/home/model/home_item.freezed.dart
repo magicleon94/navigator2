@@ -115,11 +115,6 @@ class _$_HomeItem implements _HomeItem {
   final String title;
 
   @override
-  String toString() {
-    return 'HomeItem(id: $id, title: $title)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HomeItem &&

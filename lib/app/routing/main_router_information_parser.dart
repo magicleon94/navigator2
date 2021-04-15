@@ -32,6 +32,10 @@ class MainRouterInformationParser
           case Routes.GOODBYE:
             items.add(MainNavigation.goodbye());
             break;
+          case Routes.HOME_DETAIL:
+            final itemId = int.parse(uri.pathSegments[++i]);
+            items.add(MainNavigation.homeDetail(itemId));
+            break;
           default:
             items = [MainNavigation.notFound()];
             break;
@@ -49,12 +53,12 @@ class MainRouterInformationParser
       (previousValue, element) {
         return previousValue +
             element.when(
-              notFound: () => '',
-              splash: () => '/${Routes.SPLASH}',
-              hello: () => '/${Routes.HELLO}',
-              goodbye: () => '/${Routes.GOODBYE}',
-              home: () => '/${Routes.HOME}',
-            );
+                notFound: () => '',
+                splash: () => '/${Routes.SPLASH}',
+                hello: () => '/${Routes.HELLO}',
+                goodbye: () => '/${Routes.GOODBYE}',
+                home: () => '/${Routes.HOME}',
+                homeDetail: (id) => '/${Routes.HOME_DETAIL}/$id');
       },
     );
     return RouteInformation(location: location);

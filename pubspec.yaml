@@ -13,6 +13,7 @@ dependencies:
   flutter_bloc:
   http_services:
   pedantic:
+  flow_builder: ^0.0.2
 
 dev_dependencies:
   flutter_test:

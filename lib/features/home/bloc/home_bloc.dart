@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:navigator2/app/common/bloc_states.dart';
 import 'package:navigator2/features/home/model/home_item.dart';
 import 'package:navigator2/features/home/service/home_service.dart';
 

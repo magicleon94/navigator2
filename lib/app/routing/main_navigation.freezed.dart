@@ -35,6 +35,12 @@ class _$MainNavigationTearOff {
   Goodbye goodbye() {
     return const Goodbye();
   }
+
+  HomeDetail homeDetail(int itemId) {
+    return HomeDetail(
+      itemId,
+    );
+  }
 }
 
 /// @nodoc
@@ -49,6 +55,7 @@ mixin _$MainNavigation {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +65,7 @@ mixin _$MainNavigation {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +76,7 @@ mixin _$MainNavigation {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +86,7 @@ mixin _$MainNavigation {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +150,7 @@ class _$NotFound implements NotFound {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) {
     return notFound();
   }
@@ -152,6 +163,7 @@ class _$NotFound implements NotFound {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -168,6 +180,7 @@ class _$NotFound implements NotFound {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) {
     return notFound(this);
   }
@@ -180,6 +193,7 @@ class _$NotFound implements NotFound {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -234,6 +248,7 @@ class _$Splash implements Splash {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) {
     return splash();
   }
@@ -246,6 +261,7 @@ class _$Splash implements Splash {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) {
     if (splash != null) {
@@ -262,6 +278,7 @@ class _$Splash implements Splash {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) {
     return splash(this);
   }
@@ -274,6 +291,7 @@ class _$Splash implements Splash {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) {
     if (splash != null) {
@@ -328,6 +346,7 @@ class _$Home implements Home {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) {
     return home();
   }
@@ -340,6 +359,7 @@ class _$Home implements Home {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -356,6 +376,7 @@ class _$Home implements Home {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) {
     return home(this);
   }
@@ -368,6 +389,7 @@ class _$Home implements Home {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -422,6 +444,7 @@ class _$Hello implements Hello {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) {
     return hello();
   }
@@ -434,6 +457,7 @@ class _$Hello implements Hello {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) {
     if (hello != null) {
@@ -450,6 +474,7 @@ class _$Hello implements Hello {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) {
     return hello(this);
   }
@@ -462,6 +487,7 @@ class _$Hello implements Hello {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) {
     if (hello != null) {
@@ -516,6 +542,7 @@ class _$Goodbye implements Goodbye {
     required TResult Function() home,
     required TResult Function() hello,
     required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
   }) {
     return goodbye();
   }
@@ -528,6 +555,7 @@ class _$Goodbye implements Goodbye {
     TResult Function()? home,
     TResult Function()? hello,
     TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
     required TResult orElse(),
   }) {
     if (goodbye != null) {
@@ -544,6 +572,7 @@ class _$Goodbye implements Goodbye {
     required TResult Function(Home value) home,
     required TResult Function(Hello value) hello,
     required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
   }) {
     return goodbye(this);
   }
@@ -556,6 +585,7 @@ class _$Goodbye implements Goodbye {
     TResult Function(Home value)? home,
     TResult Function(Hello value)? hello,
     TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
     required TResult orElse(),
   }) {
     if (goodbye != null) {
@@ -567,4 +597,133 @@ class _$Goodbye implements Goodbye {
 
 abstract class Goodbye implements MainNavigation {
   const factory Goodbye() = _$Goodbye;
+}
+
+/// @nodoc
+abstract class $HomeDetailCopyWith<$Res> {
+  factory $HomeDetailCopyWith(
+          HomeDetail value, $Res Function(HomeDetail) then) =
+      _$HomeDetailCopyWithImpl<$Res>;
+  $Res call({int itemId});
+}
+
+/// @nodoc
+class _$HomeDetailCopyWithImpl<$Res> extends _$MainNavigationCopyWithImpl<$Res>
+    implements $HomeDetailCopyWith<$Res> {
+  _$HomeDetailCopyWithImpl(HomeDetail _value, $Res Function(HomeDetail) _then)
+      : super(_value, (v) => _then(v as HomeDetail));
+
+  @override
+  HomeDetail get _value => super._value as HomeDetail;
+
+  @override
+  $Res call({
+    Object? itemId = freezed,
+  }) {
+    return _then(HomeDetail(
+      itemId == freezed
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$HomeDetail implements HomeDetail {
+  const _$HomeDetail(this.itemId);
+
+  @override
+  final int itemId;
+
+  @override
+  String toString() {
+    return 'MainNavigation.homeDetail(itemId: $itemId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is HomeDetail &&
+            (identical(other.itemId, itemId) ||
+                const DeepCollectionEquality().equals(other.itemId, itemId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(itemId);
+
+  @JsonKey(ignore: true)
+  @override
+  $HomeDetailCopyWith<HomeDetail> get copyWith =>
+      _$HomeDetailCopyWithImpl<HomeDetail>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
+    required TResult Function() splash,
+    required TResult Function() home,
+    required TResult Function() hello,
+    required TResult Function() goodbye,
+    required TResult Function(int itemId) homeDetail,
+  }) {
+    return homeDetail(itemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
+    TResult Function()? splash,
+    TResult Function()? home,
+    TResult Function()? hello,
+    TResult Function()? goodbye,
+    TResult Function(int itemId)? homeDetail,
+    required TResult orElse(),
+  }) {
+    if (homeDetail != null) {
+      return homeDetail(itemId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(Splash value) splash,
+    required TResult Function(Home value) home,
+    required TResult Function(Hello value) hello,
+    required TResult Function(Goodbye value) goodbye,
+    required TResult Function(HomeDetail value) homeDetail,
+  }) {
+    return homeDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotFound value)? notFound,
+    TResult Function(Splash value)? splash,
+    TResult Function(Home value)? home,
+    TResult Function(Hello value)? hello,
+    TResult Function(Goodbye value)? goodbye,
+    TResult Function(HomeDetail value)? homeDetail,
+    required TResult orElse(),
+  }) {
+    if (homeDetail != null) {
+      return homeDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeDetail implements MainNavigation {
+  const factory HomeDetail(int itemId) = _$HomeDetail;
+
+  int get itemId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $HomeDetailCopyWith<HomeDetail> get copyWith =>
+      throw _privateConstructorUsedError;
 }

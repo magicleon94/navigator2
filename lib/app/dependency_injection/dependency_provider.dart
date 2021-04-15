@@ -16,6 +16,10 @@ class DependencyProvider extends StatelessWidget {
         RepositoryProvider.value(value: dependencyFactory.createDio()),
         RepositoryProvider.value(value: dependencyFactory.createHomeService),
         RepositoryProvider.value(value: dependencyFactory.createHomeBloc),
+        RepositoryProvider.value(value: dependencyFactory.createHomeDetailBloc),
+        RepositoryProvider.value(
+          value: dependencyFactory.createHomeDetailService,
+        ),
       ],
       child: child,
     );

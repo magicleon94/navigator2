@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               child: Text('Fetch'),
               onPressed: () {
-                MainNavigationStack.of(context)?.push(MainNavigation.hello());
+                BlocProvider.of<HomeBloc>(context).add(HomeEvent.fetch());
               },
             ),
           ],

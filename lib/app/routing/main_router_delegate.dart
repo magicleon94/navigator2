@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigator2/app/dependency_injection/dependency_factory.dart';
 import 'package:navigator2/app/routing/main_navigation_stack.dart';
+import 'package:navigator2/app/routing/routes.dart';
 import 'package:navigator2/features/goodbye/goodbye_screen.dart';
 import 'package:navigator2/features/hello/hello_screen.dart';
 import 'package:navigator2/features/home/bloc/home_bloc.dart';
 import 'package:navigator2/features/home/home_screen.dart';
+import 'package:navigator2/features/home_detail/bloc/home_detail_bloc.dart';
+import 'package:navigator2/features/home_detail/presentation/home_detail_flow.dart';
 import 'package:navigator2/features/not_found/not_found_screen.dart';
 import 'package:navigator2/features/splash/splash_screen.dart';
 
@@ -54,6 +57,14 @@ class MainRouterDelegate extends RouterDelegate<MainNavigationStack>
             goodbye: () => MaterialPage(
               key: ValueKey('goodbye_${entry.key}'),
               child: GoodbyeScreen(),
+            ),
+            homeDetail: (int itemId) => MaterialPage(
+              key: ValueKey('${Routes.HOME_DETAIL}${entry.key}'),
+              child: BlocProvider(
+                create:
+                    RepositoryProvider.of<BlocCreator<HomeDetailBloc>>(context),
+                child: HomeDetailFlow(itemId: itemId),
+              ),
             ),
           )
       ],
