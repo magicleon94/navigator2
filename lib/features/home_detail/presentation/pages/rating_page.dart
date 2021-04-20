@@ -16,10 +16,15 @@ class RatingPage extends StatelessWidget {
       body: Stack(
         children: [
           Center(
-            child: ElevatedButton(
-              child: Text('Rate'),
-              onPressed: () => BlocProvider.of<HomeDetailBloc>(context).add(
-                HomeDetailEvent.like(5),
+            child: BlocBuilder<HomeDetailBloc, HomeDetailState>(
+              builder: (context, state) => state.maybeWhen(
+                likeError: (localizedReasonKey) => Text(localizedReasonKey),
+                orElse: () => ElevatedButton(
+                  child: Text('Rate'),
+                  onPressed: () => BlocProvider.of<HomeDetailBloc>(context).add(
+                    HomeDetailEvent.like(5),
+                  ),
+                ),
               ),
             ),
           ),

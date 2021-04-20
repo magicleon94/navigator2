@@ -13,6 +13,9 @@ class HomeItemsList extends StatelessWidget {
       loading: () => Center(
         child: CircularProgressIndicator(),
       ),
+      error: (localizedReasonKey) => Center(
+        child: Text(localizedReasonKey),
+      ),
       loaded: (items) => ListView(
         children: [
           for (final item in items)

@@ -432,6 +432,18 @@ class _$HomeDetailStateTearOff {
       rating,
     );
   }
+
+  _LikeError likeError(String localizedReasonKey) {
+    return _LikeError(
+      localizedReasonKey,
+    );
+  }
+
+  _InitError initError(String localizedReasonKey) {
+    return _InitError(
+      localizedReasonKey,
+    );
+  }
 }
 
 /// @nodoc
@@ -446,6 +458,8 @@ mixin _$HomeDetailState {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -455,6 +469,8 @@ mixin _$HomeDetailState {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -465,6 +481,8 @@ mixin _$HomeDetailState {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -474,6 +492,8 @@ mixin _$HomeDetailState {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -513,8 +533,8 @@ class __$InitialCopyWithImpl<$Res> extends _$HomeDetailStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_Initial extends _Initial {
+  const _$_Initial() : super._();
 
   @override
   String toString() {
@@ -537,6 +557,8 @@ class _$_Initial implements _Initial {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) {
     return initial();
   }
@@ -549,6 +571,8 @@ class _$_Initial implements _Initial {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -565,6 +589,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) {
     return initial(this);
   }
@@ -577,6 +603,8 @@ class _$_Initial implements _Initial {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -586,8 +614,9 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeDetailState {
+abstract class _Initial extends HomeDetailState {
   const factory _Initial() = _$_Initial;
+  const _Initial._() : super._();
 }
 
 /// @nodoc
@@ -612,8 +641,8 @@ class __$InitializingCopyWithImpl<$Res>
 @Implements(LoadingState)
 
 /// @nodoc
-class _$_Initializing implements _Initializing {
-  const _$_Initializing();
+class _$_Initializing extends _Initializing {
+  const _$_Initializing() : super._();
 
   @override
   String toString() {
@@ -636,6 +665,8 @@ class _$_Initializing implements _Initializing {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) {
     return initializing();
   }
@@ -648,6 +679,8 @@ class _$_Initializing implements _Initializing {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) {
     if (initializing != null) {
@@ -664,6 +697,8 @@ class _$_Initializing implements _Initializing {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) {
     return initializing(this);
   }
@@ -676,6 +711,8 @@ class _$_Initializing implements _Initializing {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) {
     if (initializing != null) {
@@ -685,8 +722,9 @@ class _$_Initializing implements _Initializing {
   }
 }
 
-abstract class _Initializing implements HomeDetailState, LoadingState {
+abstract class _Initializing extends HomeDetailState implements LoadingState {
   const factory _Initializing() = _$_Initializing;
+  const _Initializing._() : super._();
 }
 
 /// @nodoc
@@ -708,8 +746,8 @@ class __$LikingCopyWithImpl<$Res> extends _$HomeDetailStateCopyWithImpl<$Res>
 @Implements(LoadingState)
 
 /// @nodoc
-class _$_Liking implements _Liking {
-  const _$_Liking();
+class _$_Liking extends _Liking {
+  const _$_Liking() : super._();
 
   @override
   String toString() {
@@ -732,6 +770,8 @@ class _$_Liking implements _Liking {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) {
     return liking();
   }
@@ -744,6 +784,8 @@ class _$_Liking implements _Liking {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) {
     if (liking != null) {
@@ -760,6 +802,8 @@ class _$_Liking implements _Liking {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) {
     return liking(this);
   }
@@ -772,6 +816,8 @@ class _$_Liking implements _Liking {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) {
     if (liking != null) {
@@ -781,8 +827,9 @@ class _$_Liking implements _Liking {
   }
 }
 
-abstract class _Liking implements HomeDetailState, LoadingState {
+abstract class _Liking extends HomeDetailState implements LoadingState {
   const factory _Liking() = _$_Liking;
+  const _Liking._() : super._();
 }
 
 /// @nodoc
@@ -807,8 +854,8 @@ class __$InitializedCopyWithImpl<$Res>
 @Implements(PageState)
 
 /// @nodoc
-class _$_Initialized implements _Initialized {
-  const _$_Initialized();
+class _$_Initialized extends _Initialized {
+  const _$_Initialized() : super._();
 
   @override
   String toString() {
@@ -831,6 +878,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) {
     return initialized();
   }
@@ -843,6 +892,8 @@ class _$_Initialized implements _Initialized {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -859,6 +910,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) {
     return initialized(this);
   }
@@ -871,6 +924,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -880,8 +935,9 @@ class _$_Initialized implements _Initialized {
   }
 }
 
-abstract class _Initialized implements HomeDetailState, PageState {
+abstract class _Initialized extends HomeDetailState implements PageState {
   const factory _Initialized() = _$_Initialized;
+  const _Initialized._() : super._();
 }
 
 /// @nodoc
@@ -916,8 +972,8 @@ class __$LikedCopyWithImpl<$Res> extends _$HomeDetailStateCopyWithImpl<$Res>
 @Implements(PageState)
 
 /// @nodoc
-class _$_Liked implements _Liked {
-  const _$_Liked(this.rating);
+class _$_Liked extends _Liked {
+  const _$_Liked(this.rating) : super._();
 
   @override
   final int rating;
@@ -952,6 +1008,8 @@ class _$_Liked implements _Liked {
     required TResult Function() liking,
     required TResult Function() initialized,
     required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
   }) {
     return liked(rating);
   }
@@ -964,6 +1022,8 @@ class _$_Liked implements _Liked {
     TResult Function()? liking,
     TResult Function()? initialized,
     TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
     required TResult orElse(),
   }) {
     if (liked != null) {
@@ -980,6 +1040,8 @@ class _$_Liked implements _Liked {
     required TResult Function(_Liking value) liking,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
   }) {
     return liked(this);
   }
@@ -992,6 +1054,8 @@ class _$_Liked implements _Liked {
     TResult Function(_Liking value)? liking,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
     required TResult orElse(),
   }) {
     if (liked != null) {
@@ -1001,10 +1065,287 @@ class _$_Liked implements _Liked {
   }
 }
 
-abstract class _Liked implements HomeDetailState, PageState {
+abstract class _Liked extends HomeDetailState implements PageState {
   const factory _Liked(int rating) = _$_Liked;
+  const _Liked._() : super._();
 
   int get rating => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LikedCopyWith<_Liked> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$LikeErrorCopyWith<$Res> {
+  factory _$LikeErrorCopyWith(
+          _LikeError value, $Res Function(_LikeError) then) =
+      __$LikeErrorCopyWithImpl<$Res>;
+  $Res call({String localizedReasonKey});
+}
+
+/// @nodoc
+class __$LikeErrorCopyWithImpl<$Res> extends _$HomeDetailStateCopyWithImpl<$Res>
+    implements _$LikeErrorCopyWith<$Res> {
+  __$LikeErrorCopyWithImpl(_LikeError _value, $Res Function(_LikeError) _then)
+      : super(_value, (v) => _then(v as _LikeError));
+
+  @override
+  _LikeError get _value => super._value as _LikeError;
+
+  @override
+  $Res call({
+    Object? localizedReasonKey = freezed,
+  }) {
+    return _then(_LikeError(
+      localizedReasonKey == freezed
+          ? _value.localizedReasonKey
+          : localizedReasonKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+@Implements(ErrorState)
+
+/// @nodoc
+class _$_LikeError extends _LikeError {
+  const _$_LikeError(this.localizedReasonKey) : super._();
+
+  @override
+  final String localizedReasonKey;
+
+  @override
+  String toString() {
+    return 'HomeDetailState.likeError(localizedReasonKey: $localizedReasonKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LikeError &&
+            (identical(other.localizedReasonKey, localizedReasonKey) ||
+                const DeepCollectionEquality()
+                    .equals(other.localizedReasonKey, localizedReasonKey)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(localizedReasonKey);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LikeErrorCopyWith<_LikeError> get copyWith =>
+      __$LikeErrorCopyWithImpl<_LikeError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initializing,
+    required TResult Function() liking,
+    required TResult Function() initialized,
+    required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
+  }) {
+    return likeError(localizedReasonKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initializing,
+    TResult Function()? liking,
+    TResult Function()? initialized,
+    TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
+    required TResult orElse(),
+  }) {
+    if (likeError != null) {
+      return likeError(localizedReasonKey);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initializing value) initializing,
+    required TResult Function(_Liking value) liking,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
+  }) {
+    return likeError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initializing value)? initializing,
+    TResult Function(_Liking value)? liking,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
+    required TResult orElse(),
+  }) {
+    if (likeError != null) {
+      return likeError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LikeError extends HomeDetailState implements ErrorState {
+  const factory _LikeError(String localizedReasonKey) = _$_LikeError;
+  const _LikeError._() : super._();
+
+  String get localizedReasonKey => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LikeErrorCopyWith<_LikeError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InitErrorCopyWith<$Res> {
+  factory _$InitErrorCopyWith(
+          _InitError value, $Res Function(_InitError) then) =
+      __$InitErrorCopyWithImpl<$Res>;
+  $Res call({String localizedReasonKey});
+}
+
+/// @nodoc
+class __$InitErrorCopyWithImpl<$Res> extends _$HomeDetailStateCopyWithImpl<$Res>
+    implements _$InitErrorCopyWith<$Res> {
+  __$InitErrorCopyWithImpl(_InitError _value, $Res Function(_InitError) _then)
+      : super(_value, (v) => _then(v as _InitError));
+
+  @override
+  _InitError get _value => super._value as _InitError;
+
+  @override
+  $Res call({
+    Object? localizedReasonKey = freezed,
+  }) {
+    return _then(_InitError(
+      localizedReasonKey == freezed
+          ? _value.localizedReasonKey
+          : localizedReasonKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+@Implements(ErrorState)
+
+/// @nodoc
+class _$_InitError extends _InitError {
+  const _$_InitError(this.localizedReasonKey) : super._();
+
+  @override
+  final String localizedReasonKey;
+
+  @override
+  String toString() {
+    return 'HomeDetailState.initError(localizedReasonKey: $localizedReasonKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InitError &&
+            (identical(other.localizedReasonKey, localizedReasonKey) ||
+                const DeepCollectionEquality()
+                    .equals(other.localizedReasonKey, localizedReasonKey)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(localizedReasonKey);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitErrorCopyWith<_InitError> get copyWith =>
+      __$InitErrorCopyWithImpl<_InitError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initializing,
+    required TResult Function() liking,
+    required TResult Function() initialized,
+    required TResult Function(int rating) liked,
+    required TResult Function(String localizedReasonKey) likeError,
+    required TResult Function(String localizedReasonKey) initError,
+  }) {
+    return initError(localizedReasonKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initializing,
+    TResult Function()? liking,
+    TResult Function()? initialized,
+    TResult Function(int rating)? liked,
+    TResult Function(String localizedReasonKey)? likeError,
+    TResult Function(String localizedReasonKey)? initError,
+    required TResult orElse(),
+  }) {
+    if (initError != null) {
+      return initError(localizedReasonKey);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initializing value) initializing,
+    required TResult Function(_Liking value) liking,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_Liked value) liked,
+    required TResult Function(_LikeError value) likeError,
+    required TResult Function(_InitError value) initError,
+  }) {
+    return initError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initializing value)? initializing,
+    TResult Function(_Liking value)? liking,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_Liked value)? liked,
+    TResult Function(_LikeError value)? likeError,
+    TResult Function(_InitError value)? initError,
+    required TResult orElse(),
+  }) {
+    if (initError != null) {
+      return initError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitError extends HomeDetailState implements ErrorState {
+  const factory _InitError(String localizedReasonKey) = _$_InitError;
+  const _InitError._() : super._();
+
+  String get localizedReasonKey => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InitErrorCopyWith<_InitError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

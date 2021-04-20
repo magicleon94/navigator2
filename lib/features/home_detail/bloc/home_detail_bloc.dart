@@ -30,6 +30,7 @@ class HomeDetailBloc extends Bloc<HomeDetailEvent, HomeDetailState> {
     yield HomeDetailState.initializing();
     _currentId = id;
     await Future.delayed(Duration(milliseconds: 1200));
+    // yield HomeDetailState.initError('Init error!');
     yield HomeDetailState.initialized();
   }
 
@@ -37,6 +38,7 @@ class HomeDetailBloc extends Bloc<HomeDetailEvent, HomeDetailState> {
     yield HomeDetailState.liking();
     _currentRating = rating;
     await Future.delayed(Duration(milliseconds: 500));
+    // yield HomeDetailState.likeError('Like error!');
     yield HomeDetailState.liked(_currentRating ?? 0);
   }
 

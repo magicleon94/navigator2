@@ -160,6 +160,12 @@ class _$HomeStateTearOff {
       items,
     );
   }
+
+  _Error error(String localizedReasonKey) {
+    return _Error(
+      localizedReasonKey,
+    );
+  }
 }
 
 /// @nodoc
@@ -172,6 +178,7 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<HomeItem> items) loaded,
+    required TResult Function(String localizedReasonKey) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,6 +186,7 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<HomeItem> items)? loaded,
+    TResult Function(String localizedReasonKey)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -187,6 +195,7 @@ mixin _$HomeState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -194,6 +203,7 @@ mixin _$HomeState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -253,6 +263,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<HomeItem> items) loaded,
+    required TResult Function(String localizedReasonKey) error,
   }) {
     return initial();
   }
@@ -263,6 +274,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<HomeItem> items)? loaded,
+    TResult Function(String localizedReasonKey)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -277,6 +289,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -287,6 +300,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -341,6 +355,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<HomeItem> items) loaded,
+    required TResult Function(String localizedReasonKey) error,
   }) {
     return loading();
   }
@@ -351,6 +366,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<HomeItem> items)? loaded,
+    TResult Function(String localizedReasonKey)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -365,6 +381,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -375,6 +392,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -452,6 +470,7 @@ class _$_Loaded implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<HomeItem> items) loaded,
+    required TResult Function(String localizedReasonKey) error,
   }) {
     return loaded(items);
   }
@@ -462,6 +481,7 @@ class _$_Loaded implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<HomeItem> items)? loaded,
+    TResult Function(String localizedReasonKey)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -476,6 +496,7 @@ class _$_Loaded implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) {
     return loaded(this);
   }
@@ -486,6 +507,7 @@ class _$_Loaded implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -501,4 +523,127 @@ abstract class _Loaded implements HomeState {
   List<HomeItem> get items => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ErrorCopyWith<$Res> {
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
+  $Res call({String localizedReasonKey});
+}
+
+/// @nodoc
+class __$ErrorCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$ErrorCopyWith<$Res> {
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
+
+  @override
+  _Error get _value => super._value as _Error;
+
+  @override
+  $Res call({
+    Object? localizedReasonKey = freezed,
+  }) {
+    return _then(_Error(
+      localizedReasonKey == freezed
+          ? _value.localizedReasonKey
+          : localizedReasonKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+@Implements(ErrorState)
+
+/// @nodoc
+class _$_Error implements _Error {
+  const _$_Error(this.localizedReasonKey);
+
+  @override
+  final String localizedReasonKey;
+
+  @override
+  String toString() {
+    return 'HomeState.error(localizedReasonKey: $localizedReasonKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Error &&
+            (identical(other.localizedReasonKey, localizedReasonKey) ||
+                const DeepCollectionEquality()
+                    .equals(other.localizedReasonKey, localizedReasonKey)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(localizedReasonKey);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ErrorCopyWith<_Error> get copyWith =>
+      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<HomeItem> items) loaded,
+    required TResult Function(String localizedReasonKey) error,
+  }) {
+    return error(localizedReasonKey);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<HomeItem> items)? loaded,
+    TResult Function(String localizedReasonKey)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(localizedReasonKey);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Error implements HomeState, ErrorState {
+  const factory _Error(String localizedReasonKey) = _$_Error;
+
+  String get localizedReasonKey => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }

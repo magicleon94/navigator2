@@ -1,8 +1,7 @@
 abstract class LoadingState {}
 
 abstract class ErrorState {
-  final String localizedReasonKey;
-  ErrorState(this.localizedReasonKey);
+  String get localizedReasonKey;
 }
 
 abstract class PageState {}
