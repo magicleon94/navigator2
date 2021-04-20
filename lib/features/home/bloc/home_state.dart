@@ -6,4 +6,6 @@ class HomeState with _$HomeState {
   @Implements(LoadingState)
   const factory HomeState.loading() = _Loading;
   const factory HomeState.loaded(List<HomeItem> items) = _Loaded;
+  @Implements(ErrorState)
+  const factory HomeState.error(String localizedReasonKey) = _Error;
 }

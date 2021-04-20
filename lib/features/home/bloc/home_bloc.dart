@@ -29,6 +29,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeItem(1, 'Paperino'),
       HomeItem(2, 'Pluto'),
     ];
+    // yield HomeState.error('Error!');
     yield HomeState.loaded(items);
   }
 }
