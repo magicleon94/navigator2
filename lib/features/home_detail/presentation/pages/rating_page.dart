@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:navigator2/app/routing/main_navigation_stack.dart';
+import 'package:navigator2/app/routing/main_navigation.dart';
 import 'package:navigator2/features/home_detail/bloc/home_detail_bloc.dart';
 
 class RatingPage extends StatelessWidget {
@@ -10,7 +10,7 @@ class RatingPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Rate pls'),
         leading: BackButton(
-          onPressed: MainNavigationStack.of(context)?.pop,
+          onPressed: () => MainNavigation.pop(context),
         ),
       ),
       body: Stack(

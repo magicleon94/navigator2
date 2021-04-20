@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigator2/app/routing/main_navigation_stack.dart';
+import 'package:navigator2/app/routing/main_navigation.dart';
 
 class RatedPage extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class RatedPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: Text('Quit'),
-          onPressed: MainNavigationStack.of(context)?.pop,
+          onPressed: () => MainNavigation.pop(context),
         ),
       ),
     );

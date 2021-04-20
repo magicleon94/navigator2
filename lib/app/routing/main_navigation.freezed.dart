@@ -727,3 +727,405 @@ abstract class HomeDetail implements MainNavigation {
   $HomeDetailCopyWith<HomeDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$MainNavigationNotificationTearOff {
+  const _$MainNavigationNotificationTearOff();
+
+  _MainNavigationPush push(MainNavigation page) {
+    return _MainNavigationPush(
+      page,
+    );
+  }
+
+  _MainNavigationPop pop() {
+    return const _MainNavigationPop();
+  }
+
+  _MainNavigationReplace replace(List<MainNavigation> stack) {
+    return _MainNavigationReplace(
+      stack,
+    );
+  }
+}
+
+/// @nodoc
+const $MainNavigationNotification = _$MainNavigationNotificationTearOff();
+
+/// @nodoc
+mixin _$MainNavigationNotification {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MainNavigation page) push,
+    required TResult Function() pop,
+    required TResult Function(List<MainNavigation> stack) replace,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MainNavigation page)? push,
+    TResult Function()? pop,
+    TResult Function(List<MainNavigation> stack)? replace,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainNavigationPush value) push,
+    required TResult Function(_MainNavigationPop value) pop,
+    required TResult Function(_MainNavigationReplace value) replace,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainNavigationPush value)? push,
+    TResult Function(_MainNavigationPop value)? pop,
+    TResult Function(_MainNavigationReplace value)? replace,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MainNavigationNotificationCopyWith<$Res> {
+  factory $MainNavigationNotificationCopyWith(MainNavigationNotification value,
+          $Res Function(MainNavigationNotification) then) =
+      _$MainNavigationNotificationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$MainNavigationNotificationCopyWithImpl<$Res>
+    implements $MainNavigationNotificationCopyWith<$Res> {
+  _$MainNavigationNotificationCopyWithImpl(this._value, this._then);
+
+  final MainNavigationNotification _value;
+  // ignore: unused_field
+  final $Res Function(MainNavigationNotification) _then;
+}
+
+/// @nodoc
+abstract class _$MainNavigationPushCopyWith<$Res> {
+  factory _$MainNavigationPushCopyWith(
+          _MainNavigationPush value, $Res Function(_MainNavigationPush) then) =
+      __$MainNavigationPushCopyWithImpl<$Res>;
+  $Res call({MainNavigation page});
+
+  $MainNavigationCopyWith<$Res> get page;
+}
+
+/// @nodoc
+class __$MainNavigationPushCopyWithImpl<$Res>
+    extends _$MainNavigationNotificationCopyWithImpl<$Res>
+    implements _$MainNavigationPushCopyWith<$Res> {
+  __$MainNavigationPushCopyWithImpl(
+      _MainNavigationPush _value, $Res Function(_MainNavigationPush) _then)
+      : super(_value, (v) => _then(v as _MainNavigationPush));
+
+  @override
+  _MainNavigationPush get _value => super._value as _MainNavigationPush;
+
+  @override
+  $Res call({
+    Object? page = freezed,
+  }) {
+    return _then(_MainNavigationPush(
+      page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as MainNavigation,
+    ));
+  }
+
+  @override
+  $MainNavigationCopyWith<$Res> get page {
+    return $MainNavigationCopyWith<$Res>(_value.page, (value) {
+      return _then(_value.copyWith(page: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_MainNavigationPush extends _MainNavigationPush {
+  const _$_MainNavigationPush(this.page) : super._();
+
+  @override
+  final MainNavigation page;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MainNavigationPush &&
+            (identical(other.page, page) ||
+                const DeepCollectionEquality().equals(other.page, page)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(page);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MainNavigationPushCopyWith<_MainNavigationPush> get copyWith =>
+      __$MainNavigationPushCopyWithImpl<_MainNavigationPush>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MainNavigation page) push,
+    required TResult Function() pop,
+    required TResult Function(List<MainNavigation> stack) replace,
+  }) {
+    return push(page);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MainNavigation page)? push,
+    TResult Function()? pop,
+    TResult Function(List<MainNavigation> stack)? replace,
+    required TResult orElse(),
+  }) {
+    if (push != null) {
+      return push(page);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainNavigationPush value) push,
+    required TResult Function(_MainNavigationPop value) pop,
+    required TResult Function(_MainNavigationReplace value) replace,
+  }) {
+    return push(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainNavigationPush value)? push,
+    TResult Function(_MainNavigationPop value)? pop,
+    TResult Function(_MainNavigationReplace value)? replace,
+    required TResult orElse(),
+  }) {
+    if (push != null) {
+      return push(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MainNavigationPush extends MainNavigationNotification {
+  const factory _MainNavigationPush(MainNavigation page) =
+      _$_MainNavigationPush;
+  const _MainNavigationPush._() : super._();
+
+  MainNavigation get page => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MainNavigationPushCopyWith<_MainNavigationPush> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$MainNavigationPopCopyWith<$Res> {
+  factory _$MainNavigationPopCopyWith(
+          _MainNavigationPop value, $Res Function(_MainNavigationPop) then) =
+      __$MainNavigationPopCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$MainNavigationPopCopyWithImpl<$Res>
+    extends _$MainNavigationNotificationCopyWithImpl<$Res>
+    implements _$MainNavigationPopCopyWith<$Res> {
+  __$MainNavigationPopCopyWithImpl(
+      _MainNavigationPop _value, $Res Function(_MainNavigationPop) _then)
+      : super(_value, (v) => _then(v as _MainNavigationPop));
+
+  @override
+  _MainNavigationPop get _value => super._value as _MainNavigationPop;
+}
+
+/// @nodoc
+class _$_MainNavigationPop extends _MainNavigationPop {
+  const _$_MainNavigationPop() : super._();
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _MainNavigationPop);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MainNavigation page) push,
+    required TResult Function() pop,
+    required TResult Function(List<MainNavigation> stack) replace,
+  }) {
+    return pop();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MainNavigation page)? push,
+    TResult Function()? pop,
+    TResult Function(List<MainNavigation> stack)? replace,
+    required TResult orElse(),
+  }) {
+    if (pop != null) {
+      return pop();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainNavigationPush value) push,
+    required TResult Function(_MainNavigationPop value) pop,
+    required TResult Function(_MainNavigationReplace value) replace,
+  }) {
+    return pop(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainNavigationPush value)? push,
+    TResult Function(_MainNavigationPop value)? pop,
+    TResult Function(_MainNavigationReplace value)? replace,
+    required TResult orElse(),
+  }) {
+    if (pop != null) {
+      return pop(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MainNavigationPop extends MainNavigationNotification {
+  const factory _MainNavigationPop() = _$_MainNavigationPop;
+  const _MainNavigationPop._() : super._();
+}
+
+/// @nodoc
+abstract class _$MainNavigationReplaceCopyWith<$Res> {
+  factory _$MainNavigationReplaceCopyWith(_MainNavigationReplace value,
+          $Res Function(_MainNavigationReplace) then) =
+      __$MainNavigationReplaceCopyWithImpl<$Res>;
+  $Res call({List<MainNavigation> stack});
+}
+
+/// @nodoc
+class __$MainNavigationReplaceCopyWithImpl<$Res>
+    extends _$MainNavigationNotificationCopyWithImpl<$Res>
+    implements _$MainNavigationReplaceCopyWith<$Res> {
+  __$MainNavigationReplaceCopyWithImpl(_MainNavigationReplace _value,
+      $Res Function(_MainNavigationReplace) _then)
+      : super(_value, (v) => _then(v as _MainNavigationReplace));
+
+  @override
+  _MainNavigationReplace get _value => super._value as _MainNavigationReplace;
+
+  @override
+  $Res call({
+    Object? stack = freezed,
+  }) {
+    return _then(_MainNavigationReplace(
+      stack == freezed
+          ? _value.stack
+          : stack // ignore: cast_nullable_to_non_nullable
+              as List<MainNavigation>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_MainNavigationReplace extends _MainNavigationReplace {
+  const _$_MainNavigationReplace(this.stack) : super._();
+
+  @override
+  final List<MainNavigation> stack;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _MainNavigationReplace &&
+            (identical(other.stack, stack) ||
+                const DeepCollectionEquality().equals(other.stack, stack)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(stack);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MainNavigationReplaceCopyWith<_MainNavigationReplace> get copyWith =>
+      __$MainNavigationReplaceCopyWithImpl<_MainNavigationReplace>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MainNavigation page) push,
+    required TResult Function() pop,
+    required TResult Function(List<MainNavigation> stack) replace,
+  }) {
+    return replace(stack);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MainNavigation page)? push,
+    TResult Function()? pop,
+    TResult Function(List<MainNavigation> stack)? replace,
+    required TResult orElse(),
+  }) {
+    if (replace != null) {
+      return replace(stack);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainNavigationPush value) push,
+    required TResult Function(_MainNavigationPop value) pop,
+    required TResult Function(_MainNavigationReplace value) replace,
+  }) {
+    return replace(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainNavigationPush value)? push,
+    TResult Function(_MainNavigationPop value)? pop,
+    TResult Function(_MainNavigationReplace value)? replace,
+    required TResult orElse(),
+  }) {
+    if (replace != null) {
+      return replace(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MainNavigationReplace extends MainNavigationNotification {
+  const factory _MainNavigationReplace(List<MainNavigation> stack) =
+      _$_MainNavigationReplace;
+  const _MainNavigationReplace._() : super._();
+
+  List<MainNavigation> get stack => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MainNavigationReplaceCopyWith<_MainNavigationReplace> get copyWith =>
+      throw _privateConstructorUsedError;
+}

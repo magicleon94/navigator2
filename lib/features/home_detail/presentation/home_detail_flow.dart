@@ -2,7 +2,7 @@ import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigator2/app/common/bloc_states.dart';
-import 'package:navigator2/app/routing/main_navigation_stack.dart';
+import 'package:navigator2/app/routing/main_navigation.dart';
 import 'package:navigator2/app/routing/page_utils.dart';
 import 'package:navigator2/features/home_detail/bloc/home_detail_bloc.dart';
 import 'package:navigator2/features/home_detail/presentation/pages/rated_page.dart';
@@ -103,7 +103,7 @@ class _HomeDetailFlowState extends State<HomeDetailFlow> {
             )
           ],
         ),
-        onComplete: (_) => MainNavigationStack.of(context)?.pop(),
+        onComplete: (_) => MainNavigation.pop(context),
       ),
     );
   }

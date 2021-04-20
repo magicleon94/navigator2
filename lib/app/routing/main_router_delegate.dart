@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigator2/app/dependency_injection/dependency_factory.dart';
+import 'package:navigator2/app/routing/main_navigation.dart';
 import 'package:navigator2/app/routing/main_navigation_stack.dart';
 import 'package:navigator2/app/routing/routes.dart';
 import 'package:navigator2/features/goodbye/goodbye_screen.dart';
@@ -29,53 +30,65 @@ class MainRouterDelegate extends RouterDelegate<MainNavigationStack>
     super.dispose();
   }
 
+  bool _onNotification(MainNavigationNotification notification) {
+    notification.when(
+      push: (page) => stack.push(page),
+      pop: () => stack.pop(),
+      replace: (newStack) => stack.items = newStack,
+    );
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-      pages: [
-        for (final entry in stack.items.asMap().entries)
-          entry.value.when(
-            notFound: () => MaterialPage(
-              key: ValueKey('notFound_${entry.key}'),
-              child: NotFoundScreen(),
-            ),
-            splash: () => MaterialPage(
-              key: ValueKey('splash_${entry.key}'),
-              child: SplashScreen(),
-            ),
-            home: () => MaterialPage(
-              key: ValueKey('home_${entry.key}'),
-              child: BlocProvider<HomeBloc>(
-                create: RepositoryProvider.of<BlocCreator<HomeBloc>>(context),
-                child: HomeScreen(),
+    return NotificationListener<MainNavigationNotification>(
+      onNotification: _onNotification,
+      child: Navigator(
+        pages: [
+          for (final entry in stack.items.asMap().entries)
+            entry.value.when(
+              notFound: () => MaterialPage(
+                key: ValueKey('notFound_${entry.key}'),
+                child: NotFoundScreen(),
               ),
-            ),
-            hello: () => MaterialPage(
-              key: ValueKey('hello_${entry.key}'),
-              child: HelloScreen(),
-            ),
-            goodbye: () => MaterialPage(
-              key: ValueKey('goodbye_${entry.key}'),
-              child: GoodbyeScreen(),
-            ),
-            homeDetail: (int itemId) => MaterialPage(
-              key: ValueKey('${Routes.HOME_DETAIL}${entry.key}'),
-              child: BlocProvider(
-                create:
-                    RepositoryProvider.of<BlocCreator<HomeDetailBloc>>(context),
-                child: HomeDetailFlow(itemId: itemId),
+              splash: () => MaterialPage(
+                key: ValueKey('splash_${entry.key}'),
+                child: SplashScreen(),
               ),
-            ),
-          )
-      ],
-      key: navigatorKey,
-      onPopPage: (route, result) {
-        if (!route.didPop(result)) {
-          return false;
-        }
-        stack.pop();
-        return true;
-      },
+              home: () => MaterialPage(
+                key: ValueKey('home_${entry.key}'),
+                child: BlocProvider<HomeBloc>(
+                  create: RepositoryProvider.of<BlocCreator<HomeBloc>>(context),
+                  child: HomeScreen(),
+                ),
+              ),
+              hello: () => MaterialPage(
+                key: ValueKey('hello_${entry.key}'),
+                child: HelloScreen(),
+              ),
+              goodbye: () => MaterialPage(
+                key: ValueKey('goodbye_${entry.key}'),
+                child: GoodbyeScreen(),
+              ),
+              homeDetail: (int itemId) => MaterialPage(
+                key: ValueKey('${Routes.HOME_DETAIL}${entry.key}'),
+                child: BlocProvider(
+                  create: RepositoryProvider.of<BlocCreator<HomeDetailBloc>>(
+                      context),
+                  child: HomeDetailFlow(itemId: itemId),
+                ),
+              ),
+            )
+        ],
+        key: navigatorKey,
+        onPopPage: (route, result) {
+          if (!route.didPop(result)) {
+            return false;
+          }
+          stack.pop();
+          return true;
+        },
+      ),
     );
   }
 

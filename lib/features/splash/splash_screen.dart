@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:navigator2/app/routing/main_navigation.dart';
-import 'package:navigator2/app/routing/main_navigation_stack.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -13,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         child: ElevatedButton(
           child: Text('Go to home'),
           onPressed: () {
-            MainNavigationStack.of(context)?.items = [MainNavigation.home()];
+            MainNavigation.replace(context, [MainNavigation.home()]);
           },
         ),
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:navigator2/app/routing/main_navigation.dart';
-import 'package:navigator2/app/routing/main_navigation_stack.dart';
 import 'package:navigator2/app/routing/main_router_delegate.dart';
 import 'package:navigator2/features/home/bloc/home_bloc.dart';
 import 'package:navigator2/features/home/widgets/home_items_list.dart';
@@ -34,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               child: Text('Go to hello'),
               onPressed: () {
-                MainNavigationStack.of(context)?.push(MainNavigation.hello());
+                MainNavigation.push(context, MainNavigation.hello());
               },
             ),
             ElevatedButton(
