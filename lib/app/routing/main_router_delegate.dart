@@ -40,6 +40,9 @@ class MainRouterDelegate extends RouterDelegate<MainNavigationStack>
   }
 
   @override
+  MainNavigationStack? get currentConfiguration => stack;
+
+  @override
   Widget build(BuildContext context) {
     return NotificationListener<MainNavigationNotification>(
       onNotification: _onNotification,
